@@ -1,7 +1,7 @@
 /* jshint undef:true, unused:true , esversion:6
 */
 
-import {VisibilityFilters, SET_VISIBILITY_FILTER, ADD_TODO, TOGGLE_TODO} from './action';
+import {VisibilityFilters, SET_VISIBILITY_FILTER, ADD_TODO, COMPLETED_TODO} from './action';
 import {combineReducers} from 'redux';
 const {SHOW_ALL} = VisibilityFilters;
 // console.log(SHOW_ALL);
@@ -25,7 +25,12 @@ function todos (state = [], action) {
                     completed: false,
                 },
             ];
-        case TOGGLE_TODO:
+        case COMPLETED_TODO:
+            return [...state.slice(0, action.index),
+                Object.assign({}, state[action.index], {completed: true}),
+                ...state.slice(action.index + 1)];
+
+            /*
             return state.map((todo, index) => {
                 if (index === action.index) {
                     return Object.assign({}, todo, {
@@ -34,6 +39,7 @@ function todos (state = [], action) {
                 }
                 return todo;
             });
+            */
         default:
 
             /*

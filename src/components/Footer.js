@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { WSAESHUTDOWN } from 'constants';
+// import { WSAESHUTDOWN } from 'constants';
 
 export default class Footer extends Component {
     renderFilter (filter, name) {

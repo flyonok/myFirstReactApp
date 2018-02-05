@@ -5,7 +5,7 @@ import todoApp from './study_redux03';
 
 let store = createStore(todoApp);
 // console.log(store);
-import {addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters} from './action';
+import {addTodo, completedTodo, setVisibilityFilter, VisibilityFilters} from './action';
 
 console.log(store.getState());
 
@@ -17,8 +17,8 @@ let unsubscrible = store.subscribe(() => {
 store.dispatch(addTodo('Learn about actions'));
 store.dispatch(addTodo('Learn about reducers'));
 store.dispatch(addTodo('Learn about store'));
-store.dispatch(toggleTodo(0));
-store.dispatch(toggleTodo(1));
+store.dispatch(completedTodo(0));
+store.dispatch(completedTodo(1));
 store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED));
 
 unsubscrible();

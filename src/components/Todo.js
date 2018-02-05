@@ -5,7 +5,7 @@ export default class Todo extends Component {
     render () {
         return (
             <li
-                onclick = {this.props.onclick}
+                onClick = {this.props.onClick}
                 style = {{
                     textDecoration: this.props.completed ? 'line-through' : 'none',
                     cursor: this.props.completed ? 'default' : 'pointer'
@@ -19,7 +19,7 @@ export default class Todo extends Component {
 }
 
 Todo.propTypes = {
-    onclick: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
     text: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
 };
